@@ -1,0 +1,80 @@
+@use '../utilities/' as *;
+
+/* Header */
+.header {
+    $root: &;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint('md') {
+        margin-bottom: 3.1rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        img {
+            width: clamp(45px, 8vw, 65px);
+        }
+    }
+
+    &__nav {
+        display: none;
+
+        &.open {
+            display: block;
+            position: fixed;
+            background: $c-white-off;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 70vw;
+            z-index: 998;
+            animation: nav-slide-in 450ms ease-in-out;
+        }
+
+        @include breakpoint('md') {
+            display: block;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 8.9rem 0 0 0;
+
+        @include breakpoint('md') {
+            flex-direction: row;
+            padding: 0;
+        }
+    }
+
+    &__item {
+        &:last-child a {
+            padding-right: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: $c-blue-dark;
+        font-weight: 400;
+        width: 100%;
+        padding: 0.8rem 0 0.8rem 1.875rem;
+
+        @include breakpoint('md') {
+            width: unset;
+            padding: 0.8rem 1.2rem;
+            color: $c-blue-grayish-dark;
+            transition: color 200ms ease-in-out;
+
+            &:hover {
+                color: $c-orange-soft;
+            }
+        }
+    }
+}

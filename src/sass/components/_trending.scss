@@ -1,0 +1,59 @@
+@use '../utilities/' as *;
+
+/* Trending */
+.trending {
+    $root: &;
+
+    &__list {
+        display: flex;
+        flex-flow: wrap;
+        gap: 2rem;
+
+        @include breakpoint('lg') {
+            gap: 2.8rem;
+        }
+
+        @include breakpoint('xlg') {
+            gap: 1.68rem;
+        }
+    }
+
+    &__item {
+        flex-basis: 22rem;
+    }
+
+    &__link {
+        display: flex;
+        gap: 1.45rem;
+        text-decoration: none;
+
+        @include breakpoint('md') {
+            &:hover #{$root}__title { /* change title color on link hover */
+                color: $c-orange-soft;
+            }
+        }
+    }
+
+    &__image {
+        width: 100px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    &__counter {
+        color: $c-blue-grayish;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__title {
+        @include breakpoint('md') {
+            transition: color 350ms ease-in-out;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+// ANIMATIONS
+@keyframes fade-in {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes nav-slide-in {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}

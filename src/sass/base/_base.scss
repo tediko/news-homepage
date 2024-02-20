@@ -1,0 +1,26 @@
+@use '../utilities/' as *;
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: $ff-primary;
+    font-style: normal;
+    padding: 1.5rem 1rem 1rem 1rem;
+
+    @include breakpoint('md') {
+        padding-top: 3rem;
+    }
+
+    @include breakpoint('lg') {
+        padding-top: 5.29rem;
+    }
+    
+    &.open {
+        overflow: hidden;
+    }
+}
+
+a:focus-visible {
+    outline: 3px dashed $c-red-soft;
+    outline-offset: 3px;
+}

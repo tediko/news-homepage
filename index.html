@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/css/style.css">  
+  <title>News homepage</title>
+</head>
+<body data-body>
+  <!-- OVERLAY -->
+  <div class="overlay" data-overlay></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container container">
+      <a href="#" class="header__logo" aria-label="Navigate back to frontpage">
+        <img src="./assets/images/logo.svg" alt="">
+      </a>
+      <button class="header__menu hamburger" type="button" aria-label="Open menu" aria-expanded="false" data-menu>
+        <span class="hamburger__bars"></span>
+      </button>
+      <nav class="header__nav" role="navigation" aria-label="Main navigation" data-nav>
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="#" class="header__link">Home</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">New</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">Popular</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">Trending</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">Categories</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- KEY VISUAL -->
+  <main class="kv">
+    <div class="kv__container container">
+      <div class="kv__article">
+        <picture class="kv__preview">
+          <source media="(min-width: 481px)" srcset="./assets/images/image-web-3-desktop.jpg" />
+          <img src="./assets/images/image-web-3-mobile.jpg" alt="Colorful blocks and shapes, creating a visual composition">
+        </picture>
+        <div class="kv__content">
+          <h1 class="kv__title heading heading--lg">The Bright Future of Web 3.0?</h1>
+          <div class="kv__desc-wrapper">
+            <p class="kv__desc text">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+              But is it really fulfilling its promise?</p>
+            <a href="" class="kv__cta btn">Read more</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLES -->
+      <section class="kv__articles articles">
+        <div class="articles__container">
+          <h2 class="articles__title heading heading--big heading--yellow">New</h2>
+          <ul class="articles__list">
+            <!-- ITEM 01 -->
+            <li class="articles__item">
+              <a href="#" class="articles__link">
+                <h3 class="articles__heading heading heading--md heading--white">Hydrogen VS Electric Cars</h3>
+                <p class="articles__desc text">Will hydrogen-fueled cars ever catch up to EVs?</p>
+              </a>
+            </li>
+            <!-- ITEM 02 -->
+            <li class="articles__item">
+              <a href="#" class="articles__link">
+                <h3 class="articles__heading heading heading--md heading--white">The Downsides of AI Artistry</h3>
+                <p class="articles__desc text">What are the possible adverse effects of on-demand AI image generation?</p>
+              </a>
+            </li>
+            <!-- ITEM 03 -->
+            <li class="articles__item">
+              <a href="#" class="articles__link">
+                <h3 class="articles__heading heading heading--md heading--white">Is VC Funding Drying Up?</h3>
+                <p class="articles__desc text">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    
+    <!-- TRENDING -->
+    <section class="kv__trending trending">
+      <div class="trending__container container">
+        <ul class="trending__list">
+          <!-- ITEM 01 -->
+          <li class="trending__item">
+            <a href="#" class="trending__link">
+              <img src="./assets/images/image-retro-pcs.jpg" alt="" class="trending__image">
+              <div class="trending__content">
+                <span class="trending__counter">01</span>
+                <h3 class="trending__title heading heading--sm">Reviving Retro PCs</h3>
+                <p class="trending__desc text">What happens when old PCs are given modern upgrades?</p>
+              </div>
+            </a>
+          </li>
+          <!-- ITEM 02 -->
+          <li class="trending__item">
+            <a href="#" class="trending__link">
+              <img src="./assets/images/image-top-laptops.jpg" alt="" class="trending__image">
+              <div class="trending__content">
+                <span class="trending__counter">02</span>
+                <h3 class="trending__title heading heading--sm">Top 10 Laptops of 2022</h3>
+                <p class="trending__desc text">Our best picks for various needs and budgets.</p>
+              </div>
+            </a>
+          </li>
+          <!-- ITEM 03 -->
+          <li class="trending__item">
+            <a href="#" class="trending__link">
+              <img src="./assets/images/image-gaming-growth.jpg" alt="" class="trending__image">
+              <div class="trending__content">
+                <span class="trending__counter">03</span>
+                <h3 class="trending__title heading heading--sm">The Growth of Gaming</h3>
+                <p class="trending__desc text">How the pandemic has sparked fresh opportunities.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

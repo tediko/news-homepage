@@ -1,0 +1,61 @@
+@use '../utilities/' as *;
+
+/* Articles */
+.articles {
+    $root: &;
+
+    &__container {
+        background: $c-blue-dark;
+        padding: 1.6rem 1rem 1.6rem 1rem;
+
+        @include breakpoint('lg') {
+            padding: 1.9rem 1.6rem 2.17rem 1.6rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0.625rem;
+
+        @include breakpoint('lg') {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item {
+        &:not(:last-of-type) { /* add border bottom on all items except last */
+            border-bottom: 1px solid $c-blue-grayish-dark;
+        }
+
+        &:last-of-type #{$root}__link { /* remove link padding from last item */
+            padding-bottom: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        padding: 1.8rem 0;
+
+        @include breakpoint('md') {
+            &:hover #{$root}__heading { /* change heading color on link hoover */
+                color: $c-orange-soft;
+            }
+        }
+
+        @include breakpoint('lg') {
+            padding: 2rem 0;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 0.7rem;
+
+        @include breakpoint('md') {
+            transition: color 350ms ease-in-out;
+        }
+    }
+
+    &__desc {
+        color: $c-blue-grayish;
+    }
+}

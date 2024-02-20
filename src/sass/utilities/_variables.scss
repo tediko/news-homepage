@@ -1,0 +1,20 @@
+/* Colors */
+$c-orange-soft: hsl(35, 77%, 62%);
+$c-red-soft: hsl(5, 85%, 63%);
+$c-white-off: hsl(36, 100%, 99%);
+$c-blue-grayish: hsl(233, 8%, 79%);
+$c-blue-grayish-dark: hsl(236, 13%, 42%);
+$c-blue-dark: hsl(240, 100%, 5%);
+$c-blue-dark-60: hsla(240, 100%, 5%, 60%);
+
+/* Fonts */
+$ff-primary: "Inter", sans-serif;
+
+/* Media query breakpoints */
+$breakpoints: (
+    xs: 23.5rem,
+    sm: 30.0625rem,
+    md: 48.0625rem,
+    lg: 64rem,
+    xlg: 75rem
+);

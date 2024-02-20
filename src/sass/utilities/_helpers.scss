@@ -1,0 +1,75 @@
+@use './variables' as *;
+@use './animations' as *;
+@use './mixins' as *;
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background-color: $c-blue-dark-60;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 997;
+    animation: fade-in 350ms ease-in-out;
+
+    &.open {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/* Container */
+.container {
+    @include breakpoint('md') {
+        max-width: 69.375rem;
+        margin: 0 auto;
+    }
+}
+
+/* Headings */
+.heading {
+    color: $c-blue-dark;
+    font-weight: 800;
+
+    &--lg {
+        font-size: 2.7rem;
+        line-height: 1;
+
+        @include breakpoint('lg') {
+            font-size: 3.5rem;
+        }
+    }
+
+    &--big {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-weight: 600;
+    }
+
+    &--md {
+        font-size: 1.19rem;
+        letter-spacing: 0.0313rem;
+    }
+
+    &--sm {
+        font-size: clamp(1rem, 4vw, 1.09rem);
+        letter-spacing: 0.02rem;
+    }
+
+    &--white {
+        color: $c-white-off;
+    }
+    &--yellow {
+        color: $c-orange-soft;
+    }
+}
+
+/* Text */
+.text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: $c-blue-grayish-dark;
+}

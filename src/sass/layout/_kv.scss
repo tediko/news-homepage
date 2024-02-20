@@ -1,0 +1,95 @@
+@use '../utilities/' as *;
+
+/* Key Visual */
+.kv {
+    $root: &;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 3.75rem;
+        margin-bottom: 3.75rem;
+
+        @include breakpoint('md') {
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        @include breakpoint('lg') {
+            gap: 1.8rem;
+            margin-bottom: 4.5rem;
+        }
+    }
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        @include breakpoint('md') {
+            flex: 1.5;
+        }
+
+        @include breakpoint('lg') {
+            gap: 2rem;
+        }
+    }
+
+    &__content {
+        @include breakpoint('md') {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        @include breakpoint('lg') {
+            flex-direction: row;
+            gap: 1.9rem;
+        }
+    }
+    
+    &__title {
+        margin-bottom: 1.25rem;
+        max-width: 23.125rem;
+
+        @include breakpoint('sm') {
+            max-width: 24rem;
+        }
+
+        @include breakpoint('lg') {
+            flex: 1;
+            margin-bottom: 0;
+        }
+    }
+
+    &__desc-wrapper {
+        @include breakpoint('md') {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &__desc {
+        margin-bottom: 1.25rem;
+        max-width: 33.125rem;
+
+        @include breakpoint('md') {
+            max-width: 36rem;
+        }
+    }
+
+    &__articles {
+        @include breakpoint('md') {
+            display: flex;
+            flex: 1;
+            max-width: 20rem;
+        }
+
+        @include breakpoint('lg') {
+            max-width: 21.9rem;
+        }
+    }
+}
