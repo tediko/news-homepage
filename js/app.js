@@ -1,3 +1,7 @@
+// ----------------
+// MENU NAVIGATION
+// ----------------
+
 const menuButton = document.querySelector('[data-menu]');
 const overlayElement = document.querySelector('[data-overlay]');
 const navElement = document.querySelector('[data-nav]');
@@ -59,3 +63,30 @@ const handleWindowResize = () => {
 // Event listeners
 menuButton.addEventListener('click', () => toggleMenu());
 window.addEventListener('resize', () => handleWindowResize());
+
+// --------------------------------
+// CONTAINER AS PROXY FOR THE LINK
+// --------------------------------
+const proxyContainers = document.querySelectorAll('[data-proxy]');
+
+proxyContainers.forEach(proxy => {
+    const link = proxy.querySelector('[data-link]')
+    const threshold = 200;
+    let triggerDown, triggerUp, releaseTime;
+    proxy.style.cursor = 'pointer';
+    
+    proxy.onmousedown = () => triggerDown = +new Date();
+
+    // Detect how long user is taking between mousedown and mouseup
+    // -- if link is clicked directly - return and perform normal anchor behaviour.
+    // -- if releaseTime is less than threshold and event.target isn't link element then fire click() method on link.
+    // -- else nothing happens as user is probably selecting/copying text.
+    proxy.onmouseup = (event) => {
+        if (event.target === link) return;
+
+        triggerUp = +new Date();
+        releaseTime = (triggerUp - triggerDown);
+
+        if (releaseTime < threshold) link.click();
+    }
+})
