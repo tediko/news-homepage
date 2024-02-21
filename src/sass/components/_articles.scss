@@ -22,22 +22,25 @@
     }
 
     &__item {
+        padding: 1.8rem 0;
+
         &:not(:last-of-type) { /* add border bottom on all items except last */
             border-bottom: 1px solid $c-blue-grayish-dark;
         }
 
-        &:last-of-type #{$root}__link { /* remove link padding from last item */
+        &:last-of-type {
             padding-bottom: 0;
         }
-    }
 
-    &__link {
-        display: block;
-        text-decoration: none;
-        padding: 1.8rem 0;
+        /* Item is working as proxy container for link within,
+           this is why we want style it while link is focused within */ 
+        &:focus-within {
+            outline: 3px dashed $c-red-soft;
+            outline-offset: 3px;
+        }
 
         @include breakpoint('md') {
-            &:hover #{$root}__heading { /* change heading color on link hoover */
+            &:hover #{$root}__link {
                 color: $c-orange-soft;
             }
         }
@@ -47,12 +50,25 @@
         }
     }
 
-    &__heading {
-        margin-bottom: 0.7rem;
+    &__link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
 
+        /* Removed outline since trending__item is working as a proxy container for a link
+           and styles for focus are applied on container instead */ 
+           &:focus-visible {
+            outline: 0;
+            color: $c-orange-soft;
+        }
+        
         @include breakpoint('md') {
             transition: color 350ms ease-in-out;
         }
+    }
+
+    &__heading {
+        margin-bottom: 0.7rem;
     }
 
     &__desc {
