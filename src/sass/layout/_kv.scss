@@ -79,6 +79,10 @@
         @include breakpoint('md') {
             max-width: 36rem;
         }
+
+        @include breakpoint('lg') {
+            max-width: 22rem;
+        }
     }
 
     &__articles {
