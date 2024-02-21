@@ -323,6 +323,11 @@ a:focus-visible {
     max-width: 36rem;
   }
 }
+@media (min-width: 64rem) {
+  .kv__desc {
+    max-width: 22rem;
+  }
+}
 @media (min-width: 48.0625rem) {
   .kv__articles {
     display: flex;
