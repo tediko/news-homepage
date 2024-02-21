@@ -69,21 +69,20 @@ window.addEventListener('resize', () => handleWindowResize());
 // --------------------------------
 const proxyContainers = document.querySelectorAll('[data-proxy]');
 
-proxyContainers.forEach(proxy => {
-    const link = proxy.querySelector('[data-link]')
+proxyContainers.forEach(container => {
+    const link = container.querySelector('[data-link]')
     const threshold = 200;
     let triggerDown, triggerUp, releaseTime;
-    proxy.style.cursor = 'pointer';
+    container.style.cursor = 'pointer';
+    // Ignore pointer events and prevent event firing twice as we handle click manually.
+    // This also allow user to select/copy link text.
+    link.style.pointerEvents = 'none'; 
     
-    proxy.onmousedown = () => triggerDown = +new Date();
-
-    // Detect how long user is taking between mousedown and mouseup
-    // -- if link is clicked directly - return and perform normal anchor behaviour.
-    // -- if releaseTime is less than threshold and event.target isn't link element then fire click() method on link.
+    // Detect releaseTime which is how long user is taking between mousedown and mouseup
+    // -- if releaseTime is less than threshold fire click() method on link.
     // -- else nothing happens as user is probably selecting/copying text.
-    proxy.onmouseup = (event) => {
-        if (event.target === link) return;
-
+    container.onmousedown = () => triggerDown = +new Date();
+    container.onmouseup = () => {
         triggerUp = +new Date();
         releaseTime = (triggerUp - triggerDown);
 
