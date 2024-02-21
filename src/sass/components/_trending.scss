@@ -19,16 +19,39 @@
     }
 
     &__item {
+        display: flex;
+        gap: 1.45rem;
         flex-basis: 22rem;
+
+        /* Item is working as proxy container for link within,
+           this is why we want style it while link is focused within */ 
+        &:focus-within {
+            outline: 3px dashed $c-red-soft;
+            outline-offset: 3px;
+        }
+
+        @include breakpoint('md') {
+            &:hover #{$root}__link {
+                color: $c-orange-soft;
+            }
+        }
     }
 
     &__link {
-        display: flex;
-        gap: 1.45rem;
+        color: inherit;
         text-decoration: none;
 
+        /* Removed outline since trending__item is working as a proxy container for a link
+           and styles for focus are applied on container instead */ 
+        &:focus-visible {
+            outline: 0;
+            color: $c-orange-soft;
+        }
+
         @include breakpoint('md') {
-            &:hover #{$root}__title { /* change title color on link hover */
+            transition: color 350ms ease-in-out;
+
+            &:hover {
                 color: $c-orange-soft;
             }
         }
@@ -49,11 +72,5 @@
         font-size: 2rem;
         font-weight: 700;
         line-height: 1;
-    }
-
-    &__title {
-        @include breakpoint('md') {
-            transition: color 350ms ease-in-out;
-        }
     }
 }
