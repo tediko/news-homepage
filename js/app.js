@@ -31,7 +31,6 @@ const toggleMenu = () => {
         bodyElement.classList.add(activeClass);
         menuButton.classList.add(activeClass);
         menuButton.setAttribute("aria-expanded", isOpen);
-        menuButton.setAttribute("aria-label", "Close menu");
         overlayElement.classList.add(activeClass);
         navElement.classList.add(activeClass);
     }
@@ -40,7 +39,6 @@ const toggleMenu = () => {
         bodyElement.classList.remove(activeClass);
         menuButton.classList.remove(activeClass);
         menuButton.setAttribute("aria-expanded", isOpen);
-        menuButton.setAttribute("aria-label", "Open menu");
         overlayElement.classList.remove(activeClass);
         navElement.classList.remove(activeClass);
     }
